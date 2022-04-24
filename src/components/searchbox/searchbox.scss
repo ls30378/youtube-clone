@@ -1,0 +1,26 @@
+@import "../../App.scss";
+.search__container {
+  margin: 0 auto;
+  form {
+    input[type="text"] {
+      height: 35px;
+      margin: 1px;
+      border: 2px solid $secondColor;
+      background-color: lighten($color: $secondColor, $amount: 5);
+      color: white;
+      &::placeholder {
+        color: darken($color: $mainColor, $amount: 20);
+        font-size: 1.2em;
+      }
+    }
+    input[type="button"] {
+      //   height: 35px;
+      padding: 4px;
+      border-radius: 0;
+      background-color: $secondColor;
+      border: 5px solid $secondColor;
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
