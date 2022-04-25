@@ -1,0 +1,101 @@
+@import "../../App.scss";
+
+.videoCard__container {
+  //   margin: 25px 0;
+  width: 320px;
+  min-height: 350px;
+  background-color: $mainColor;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+  //   justify-content: space-between;
+  &:hover {
+    transform: scale(1.2);
+    z-index: 4;
+    background-color: lighten($color: $mainColor, $amount: 20);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    .videoCard__buttons {
+      display: flex;
+    }
+  }
+  .videoCard__video-container {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    .videoCard__video {
+      height: 100%;
+      overflow: hidden;
+      img,
+      video {
+        min-height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .videoCard__time {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($color: $mainColor, $alpha: 0.5);
+      color: white;
+      padding: 4px;
+      font-size: 0.8rem;
+      margin: 5px;
+    }
+  }
+  .videoCard__title-profile {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    // margin: 0 5px;
+    .videoCard__image {
+      height: 30px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: $secondColor;
+      display: flex;
+      position: relative;
+      margin: 5px;
+      align-items: center;
+      justify-content: center;
+      color: tomato;
+    }
+    .videoCard__title {
+      color: white;
+    }
+  }
+  .videoCard__upload {
+    padding: 0 40px;
+    .videoCard__uploader {
+      color: white;
+      font-size: 0.8rem;
+    }
+    .videoCard__views {
+      color: white;
+      font-size: 0.8rem;
+    }
+  }
+  .videoCard__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    a {
+      width: 90%;
+      margin: 4px 0;
+      background-color: $secondColor;
+      color: lighten($color: $secondColor, $amount: 20);
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 4px 0;
+      //   border: 2px solid lighten($color: $secondColor, $amount: 20);
+    }
+  }
+}

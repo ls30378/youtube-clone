@@ -1,0 +1,42 @@
+@import "../../App.scss";
+section {
+  position: relative;
+  //   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //   border-top: 2px solid $secondColor;
+  border-bottom: 2px solid $secondColor;
+  margin: 2px 0;
+  &.navSection__ad {
+    p {
+      max-width: 70%;
+      font-size: 0.9rem;
+      color: white;
+      margin: 20px;
+    }
+    .signbtn__container {
+      //   margin: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  ul {
+    width: 100%;
+    padding: 7px;
+    list-style: none;
+    li {
+      padding: 10px 30%;
+      cursor: pointer;
+      a {
+        text-transform: capitalize;
+        color: white;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: $secondColor;
+      }
+    }
+  }
+}
