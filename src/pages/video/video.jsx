@@ -3,7 +3,7 @@ import Comments from "./components/comments/comments";
 import Video from "./components/video/video";
 import UserDetail from "./user-detail/user-detail";
 import "./video.scss";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   fetchVideoAction,
   fetchCommentsAction,
@@ -19,7 +19,7 @@ const VideoPage = () => {
     dispatch(fetchVideoAction(title));
     dispatch(fetchUserAction(title));
     dispatch(fetchCommentsAction(title));
-  }, []);
+  }, [dispatch, title]);
   return (
     <div className="videoPage__container">
       <div>
