@@ -16,7 +16,7 @@ function App() {
       <SideNav isActive={isActive} setActive={setActive} />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path='/youtube-clone/' element={<Homepage />} />
+        <Route path='youtube-clone' element={<Homepage />} />
         <Route path='video/:video' element={<VideoPage />} />
       </Routes>
     </BrowserRouter>
