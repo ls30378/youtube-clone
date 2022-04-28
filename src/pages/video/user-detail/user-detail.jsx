@@ -1,6 +1,28 @@
 import "./user-detail.scss";
+import { selectUser, selectVideo } from "../../../redux/video/video.selector";
+import { useSelector } from "react-redux";
 
 const UserDetail = () => {
+  const video = useSelector(selectVideo);
+  const user = useSelector(selectUser);
+  const formatSubscribe = () => {
+    if (user.subscribers > 999 && user.subscribers < 9999) {
+      return `${user.subscribers.toString()[0]}.${
+        user.subscribers.toString()[1]
+      }K`;
+    }
+    if (user.subscribers > 9999 && user.subscribers < 99999) {
+      return `${user.subscribers.toString().substring(0, 2)}.${
+        user.subscribers.toString()[2]
+      }K`;
+    }
+    if (user.subscribers > 99999 && user.subscribers < 999999) {
+      return `${user.subscribers.toString().substring(0, 3)}.${
+        user.subscribers.toString()[3]
+      }K`;
+    }
+    if (user.subscribers > 999999) return `${user.subscribers.toString()[0]}M`;
+  };
   return (
     <div className="user__container">
       {/* FIRST ROW USER DETAIL*/}
@@ -8,8 +30,8 @@ const UserDetail = () => {
         <div className="user__detail-info">
           <div className="user__image">B</div>
           <div className="user__info">
-            <h3>Lorem, ipsum.</h3>
-            <h4>11.5K subscribers</h4>
+            <h3>{user.name}</h3>
+            <h4>{formatSubscribe()} subscribers</h4>
           </div>
         </div>
         <div className="subscribe">
@@ -18,14 +40,7 @@ const UserDetail = () => {
       </div>
       {/* END FIRST ROW */}
       <div className="user__video-description">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          repellendus asperiores, quas ex similique, accusantium consequatur
-          recusandae vel officiis architecto sunt soluta, in impedit perferendis
-          earum magni iure dolorem iusto quibusdam hic tempora fugit illum illo?
-          Quo aliquam repudiandae temporibus itaque, voluptatem magni, dicta
-          ipsa nesciunt velit quos facilis nemo!
-        </p>
+        <p>{video.description}</p>
       </div>
     </div>
   );

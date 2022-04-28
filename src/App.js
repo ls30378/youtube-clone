@@ -5,10 +5,13 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/homepage/homepage';
 import VideoPage from './pages/video/video';
+import MobileSearch from './components/mobilesearch/mobilesearch';
+
 function App() {
   const [isActive, setActive] = useState(false);
   return (
     <BrowserRouter>
+      <MobileSearch />
       <Header setActive={setActive} />
       <SideNav isActive={isActive} setActive={setActive} />
       <Routes>

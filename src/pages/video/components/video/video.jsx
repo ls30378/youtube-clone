@@ -1,23 +1,19 @@
 import "./video.scss";
-import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectVideo } from "../../../../redux/video/video.selector";
+const Video = ({ title }) => {
+  const video = useSelector(selectVideo);
 
-const Video = () => {
-  const { video: title } = useParams();
+  console.log(video);
   return (
     <div className="videoPage__videoAndDetails">
       <div className="videoPage__firstDetails">
         <div className="divVideo">
-          <video
-            src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
-            autoPlay={false}
-          />
+          <video controls src={video.url} autoPlay={false} />
         </div>
         <div className="videoPage__tagAndTitle">
           <h3 className="tag">#Video{title}</h3>
-          <h3 className="videoPage__title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
-            dolore?
-          </h3>
+          <h3 className="videoPage__title">{video.title}</h3>
         </div>
       </div>
       <div className="videoPage__detailsAndButtons">

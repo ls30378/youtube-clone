@@ -89,14 +89,19 @@
         border-radius: 50%;
       }
     }
+    i {
+      color: white;
+    }
     .header__searchAndIcons {
-      display: flex;
+      // display: flex;
+      display: none;
       flex: 2;
       justify-content: flex-end;
       align-items: center;
 
       .header__searchAndIcons--icons {
-        display: flex;
+        // display: flex;
+        display: none;
         align-self: left;
       }
     }
@@ -187,6 +192,9 @@
       //     bottom: 37%;
       //   }
       // }
+    }
+    i.fa-solid {
+      display: none;
     }
     .header__searchAndIcons {
       display: flex;
