@@ -1,0 +1,11 @@
+@import "../../App.scss";
+
+.videoPage__container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}

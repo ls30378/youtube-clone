@@ -4,7 +4,7 @@
   //   margin: 25px 0;
   width: 320px;
   min-height: 350px;
-  background-color: $mainColor;
+  // background-color: $mainColor;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,9 +13,9 @@
   &:hover {
     transform: scale(1.2);
     z-index: 4;
-    background-color: lighten($color: $mainColor, $amount: 20);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    // background-color: lighten($color: $mainColor, $amount: 20);
+    background-color: $mainColor;
+    box-shadow: 0 0 10px 2px black;
     .videoCard__buttons {
       display: flex;
     }
@@ -51,7 +51,7 @@
     height: 50px;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     // margin: 0 5px;
     .videoCard__image {
       height: 30px;

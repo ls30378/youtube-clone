@@ -1,9 +1,13 @@
 import "./brand.scss";
+import { useNavigate } from "react-router-dom";
 
 const Brand = () => {
+  const navigate = useNavigate();
   return (
-    <div className="brand__container">
-      <div className="brand__logo gg-youtube"></div>
+    <div onClick={() => navigate("/")} className="brand__container">
+      <div className="brand__logo">
+        <i className=" fa-brands fa-youtube"></i>
+      </div>
       <h2 className="brand__name">YouTube</h2>
     </div>
   );

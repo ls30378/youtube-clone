@@ -1,0 +1,57 @@
+@import "../../../../App.scss";
+
+.single-comment__container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+
+  .single-comment__user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: indianred;
+    position: relative;
+    // flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: 5px solid tomato;
+    margin-right: 20px;
+  }
+  .single-comment_details {
+    flex: 9;
+    color: white;
+    .user-details {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .single-comment {
+      font-size: 0.9rem;
+    }
+    .single-comment__buttons {
+      display: flex;
+      margin: 10px 0;
+      i {
+        padding-right: 10px;
+      }
+      p {
+        font-size: 0.9rem;
+        padding-right: 10px;
+        font-weight: 300;
+      }
+    }
+    .single-comment__replies {
+      display: flex;
+      color: #3ea6ff;
+      i {
+        padding-right: 10px;
+      }
+      p {
+      }
+    }
+  }
+}

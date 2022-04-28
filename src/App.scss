@@ -10,14 +10,13 @@ $secondColor: #373737;
 }
 body {
   font-family: "Roboto", sans-serif;
-  background-color: $mainColor;
+  // background-color: $mainColor;
+  background-color: #181818;
+  overflow: hidden;
+  height: 100vh;
 }
-.videos {
-  width: 100%;
+
+#root {
   height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 0 50px;
+  overflow-y: scroll;
 }
