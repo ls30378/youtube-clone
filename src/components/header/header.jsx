@@ -7,11 +7,14 @@ const Header = ({ setActive }) => {
   const handleClick = () => {
     setActive(true);
   };
+
   return (
     <div className="header">
       <div className="header__navAndBrand">
         <div onClick={handleClick} className="header__nav">
-          <div className="header__nav--menu"></div>
+          <div className="header__nav--menu">
+            <span></span>
+          </div>
         </div>
         <Brand></Brand>
       </div>

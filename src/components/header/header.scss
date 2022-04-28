@@ -1,97 +1,231 @@
 @import "../../App";
-
 .header {
-  width: 100%;
-  height: 55px;
-  padding: 0 25px;
-  background-color: $mainColor;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+.header__nav--menu {
+  width: 20px;
+  height: 60%;
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom: 2px solid $secondColor;
-  .signbtn__container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  &:hover {
+    &::before {
+      // transform: translateX(0%) rotate(40deg);
+      transform: translateY(13px);
+    }
+    &::after {
+      // transform: rotate(-40deg);
+
+      transform: translateY(-13px);
+    }
   }
-  .header__navAndBrand {
-    display: flex;
-    flex: 1;
-  }
-  .header__nav {
-    width: 40px;
-    height: 40px;
+  &::before {
+    content: "";
+    width: 20px;
+    height: 1px;
     position: relative;
+    background-color: white;
+    top: 0;
+    transform-origin: left;
+    transition: 0.3s;
+  }
+  &::after {
+    content: "";
+    width: 20px;
+    position: relative;
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+    transform-origin: left;
+    transition: 0.3s;
+  }
+  span {
+    width: 20px;
+    position: relative;
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+  }
+}
+
+@media screen and(max-width:768px) {
+  .header {
+    width: 100%;
+    height: 55px;
+    padding: 0 25px;
+    background-color: $mainColor;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    box-sizing: content-box;
-    &:active {
-      background-color: $secondColor;
-      border: 4px solid $secondColor;
-      border-radius: 50%;
+    border-bottom: 2px solid $secondColor;
+    .signbtn__container {
+      flex: 1;
+      display: none;
+      justify-content: center;
     }
-    .header__nav--menu {
-      width: 20px;
-      height: 1px;
-      background-color: white;
-
-      &::before {
-        content: "";
-        width: 20px;
-        height: 1px;
-        background-color: white;
-        position: absolute;
-        top: 35%;
-      }
-      &::after {
-        content: "";
-        width: 20px;
-        height: 1px;
-        background-color: white;
-        position: absolute;
-        bottom: 37%;
-      }
-    }
-  }
-  .header__searchAndIcons {
-    display: flex;
-    flex: 2;
-    justify-content: end;
-    align-items: center;
-
-    .header__searchAndIcons--icons {
+    .header__navAndBrand {
       display: flex;
-      align-self: left;
+      flex: 1;
+
+      &.active {
+        display: none;
+      }
+    }
+    .header__nav {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      box-sizing: content-box;
+      &:active {
+        background-color: $secondColor;
+        border: 4px solid $secondColor;
+        border-radius: 50%;
+      }
+    }
+    .header__searchAndIcons {
+      display: flex;
+      flex: 2;
+      justify-content: flex-end;
+      align-items: center;
+
+      .header__searchAndIcons--icons {
+        display: flex;
+        align-self: left;
+      }
+    }
+    .header__mic {
+      display: none;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      border-radius: 50%;
+      background-color: darken($color: $mainColor, $amount: 5);
+      // display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .gg-mic {
+        color: white;
+        --ggs: 0.8;
+      }
+    }
+    .header__menuGrid {
+      display: none;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      // display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      span {
+        color: white;
+        --ggs: 1.2;
+      }
     }
   }
-  .header__mic {
-    width: 36px;
-    height: 36px;
-    position: relative;
-    border-radius: 50%;
-    background-color: darken($color: $mainColor, $amount: 5);
+}
+@media screen and (min-width: 768px) {
+  .header {
+    width: 100%;
+    height: 55px;
+    padding: 0 25px;
+    background-color: $mainColor;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    .gg-mic {
-      color: white;
-      --ggs: 0.8;
+    justify-content: space-around;
+    border-bottom: 2px solid $secondColor;
+    .signbtn__container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
     }
-  }
-  .header__menuGrid {
-    width: 36px;
-    height: 36px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    span {
-      color: white;
-      --ggs: 1.2;
+    .header__navAndBrand {
+      display: flex;
+      flex: 1;
+    }
+    .header__nav {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      box-sizing: content-box;
+      &:active {
+        background-color: $secondColor;
+        border: 4px solid $secondColor;
+        border-radius: 50%;
+      }
+      // .header__nav--menu {
+      //   width: 20px;
+      //   height: 1px;
+      //   background-color: white;
+
+      //   &::before {
+      //     content: "";
+      //     width: 20px;
+      //     height: 1px;
+      //     background-color: white;
+      //     position: absolute;
+      //     top: 35%;
+      //   }
+      //   &::after {
+      //     content: "";
+      //     width: 20px;
+      //     height: 1px;
+      //     background-color: white;
+      //     position: absolute;
+      //     bottom: 37%;
+      //   }
+      // }
+    }
+    .header__searchAndIcons {
+      display: flex;
+      flex: 2;
+      justify-content: flex-end;
+      align-items: center;
+
+      .header__searchAndIcons--icons {
+        display: flex;
+        align-self: left;
+      }
+    }
+    .header__mic {
+      width: 36px;
+      height: 36px;
+      position: relative;
+      border-radius: 50%;
+      background-color: darken($color: $mainColor, $amount: 5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .gg-mic {
+        color: white;
+        --ggs: 0.8;
+      }
+    }
+    .header__menuGrid {
+      width: 36px;
+      height: 36px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      span {
+        color: white;
+        --ggs: 1.2;
+      }
     }
   }
 }

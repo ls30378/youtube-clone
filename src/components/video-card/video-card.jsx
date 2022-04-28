@@ -1,20 +1,22 @@
 import "./video-card.scss";
+import { useNavigate } from "react-router-dom";
 
-const VideoCard = () => {
+const VideoCard = ({ title }) => {
+  const navigate = useNavigate();
   const handleHover = (event) => {
     if (event.target.nodeName === "IMG") {
       event.target.nextSibling.hidden = false;
-      console.log(event.target.nextSibling);
-      //   event.target.nextSibling.paused = false;
       event.target.nextSibling.play();
       event.target.hidden = true;
     }
-    console.log(event.target.nodeName === "IMG", event.target.childNodes);
   };
   const handleLeave = (event) => {
     event.target.hidden = true;
     event.target.previousElementSibling.hidden = false;
     event.target.pause();
+  };
+  const goToVideo = () => {
+    navigate(`/video/${title}`);
   };
   return (
     <div className="videoCard__container">
@@ -23,7 +25,7 @@ const VideoCard = () => {
         onMouseLeave={handleLeave}
         className="videoCard__video-container"
       >
-        <div className="videoCard__video">
+        <div className="videoCard__video" onClick={goToVideo}>
           <img
             hidden={false}
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"

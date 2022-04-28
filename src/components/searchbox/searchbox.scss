@@ -1,56 +1,135 @@
 @import "../../App.scss";
-.search__container {
-  flex: 3;
 
-  form {
-    // width: 100%;
-    height: 40px;
-    display: flex;
-    .form__input {
+@media screen and(max-width:768px) {
+  .search__container {
+    flex: 3;
+
+    form {
       width: 100%;
+      height: 40px;
+      display: flex;
       position: relative;
-      span {
+      justify-content: flex-end;
+      .form__input {
         display: none;
-        position: absolute;
+        width: 140%;
+        height: 100%;
+        position: relative;
         &.active {
-          display: flex;
-          top: 15px;
+          display: block;
+          position: absolute;
+          left: -60%;
+          top: 0;
+          span {
+            display: none;
+            &.active {
+              display: none;
+            }
+          }
         }
-        i {
+        span {
+          display: none;
+          &.active {
+            display: flex;
+            top: 15px;
+          }
+          i {
+            color: white;
+            --ggs: 0.7;
+          }
+        }
+        input[type="text"] {
+          width: 100%;
+          height: 100%;
+          margin: 1px;
+          border: 1px solid $secondColor;
+          background-color: darken($color: $mainColor, $amount: 5);
           color: white;
-          --ggs: 0.7;
+          font-size: 1rem;
+          padding-left: 20px;
+          &::placeholder {
+            color: lighten($color: $secondColor, $amount: 50);
+            font-size: 1rem;
+          }
+          &.active {
+            width: calc(100% + 20px);
+            margin-left: -20px;
+            padding-left: 40px;
+          }
         }
       }
-      input[type="text"] {
-        width: 100%;
-        height: 100%;
-        margin: 1px;
-        border: 2px solid $secondColor;
-        background-color: darken($color: $mainColor, $amount: 5);
+      a {
+        width: 20%;
+        border-radius: 0;
+        background-color: $secondColor;
+        border: 5px solid $secondColor;
+        cursor: pointer;
         color: white;
-        font-size: 1rem;
-        padding-left: 20px;
-        &::placeholder {
-          color: lighten($color: $secondColor, $amount: 50);
-          font-size: 1rem;
-        }
-        &.active {
-          width: calc(100% + 20px);
-          margin-left: -20px;
-          padding-left: 40px;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
-    a {
-      width: 20%;
-      border-radius: 0;
-      background-color: $secondColor;
-      border: 5px solid $secondColor;
-      cursor: pointer;
-      color: white;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search__container {
+    flex: 3;
+
+    form {
+      // width: 100%;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
+      .form__input {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        span {
+          display: none;
+          position: absolute;
+          &.active {
+            display: flex;
+            top: 15px;
+          }
+          i {
+            color: white;
+            --ggs: 0.7;
+          }
+        }
+        input[type="text"] {
+          width: 100%;
+          height: 100%;
+          margin: 1px;
+          border: 1px solid $secondColor;
+          background-color: darken($color: $mainColor, $amount: 5);
+          color: white;
+          font-size: 1rem;
+          padding-left: 20px;
+          &::placeholder {
+            color: lighten($color: $secondColor, $amount: 50);
+            font-size: 1rem;
+          }
+          &.active {
+            width: calc(100% + 20px);
+            margin-left: -20px;
+            padding-left: 40px;
+          }
+        }
+      }
+      a {
+        width: 20%;
+        height: 100%;
+        background-color: $secondColor;
+        cursor: pointer;
+        color: white;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        top: 1px;
+      }
     }
   }
 }
