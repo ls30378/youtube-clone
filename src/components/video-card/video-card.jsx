@@ -21,7 +21,7 @@ const VideoCard = ({ id, url, title, user, img }) => {
   const goToVideo = () => {
     dispatch(fetchVideoAction(id));
 
-    navigate(`./video/${id}`);
+    navigate(`/video/${id}`);
   };
   return (
     <div className="videoCard__container">
