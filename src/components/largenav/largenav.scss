@@ -1,0 +1,49 @@
+@import "../../App.scss";
+
+.largenav__container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 90px;
+  height: 100vh;
+
+  //   margin: 55px auto;
+  padding: 0 35px;
+  display: flex;
+  flex-direction: column;
+  background-color: $mainColor;
+  @media screen and(max-width:1000px) {
+    display: none;
+  }
+  .largenav__icons {
+    height: 100%;
+    ul {
+      height: 90%;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      li {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          font-weight: 300;
+        }
+        i {
+          color: white;
+        }
+      }
+    }
+  }
+  .largenav__links {
+  }
+}

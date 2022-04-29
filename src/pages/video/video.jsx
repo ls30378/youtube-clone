@@ -10,6 +10,7 @@ import {
   fetchUserAction,
 } from "../../redux/video/video.actions";
 import { useParams } from "react-router-dom";
+import SuggestedVideos from "../../components/suggested-videos/suggested-videos";
 
 const VideoPage = () => {
   const dispatch = useDispatch();
@@ -22,11 +23,14 @@ const VideoPage = () => {
   }, [dispatch, title]);
   return (
     <div className="videoPage__container">
-      <div>
+      <div className="firstVideos">
         <Video title={title} />
         <UserDetail />
+        <Comments video={title} />
       </div>
-      <Comments video={title} />
+      <div className="secondVideos">
+        <SuggestedVideos />
+      </div>
     </div>
   );
 };

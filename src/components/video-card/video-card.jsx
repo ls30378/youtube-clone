@@ -2,9 +2,8 @@ import "./video-card.scss";
 import { useNavigate } from "react-router-dom";
 import { fetchVideoAction } from "../../redux/video/video.actions";
 import { useDispatch } from "react-redux";
-import { useRef } from "react";
 
-const VideoCard = ({ id, url, title, user }) => {
+const VideoCard = ({ id, url, title, user, img }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleHover = (event) => {
@@ -22,7 +21,7 @@ const VideoCard = ({ id, url, title, user }) => {
   const goToVideo = () => {
     dispatch(fetchVideoAction(id));
 
-    navigate(`video/${id}`);
+    navigate(`./video/${id}`);
   };
   return (
     <div className="videoCard__container">
@@ -32,10 +31,7 @@ const VideoCard = ({ id, url, title, user }) => {
         className="videoCard__video-container"
       >
         <div className="videoCard__video" onClick={goToVideo}>
-          <img
-            hidden={false}
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"
-          />
+          <img hidden={false} src={img} />
           <video hidden={true} src={url} autoPlay={false} />
         </div>
         <div className="videoCard__time">03:30</div>

@@ -16,14 +16,19 @@ const datas = {
             id: 3,
             name: 'Lorem lorem Ipsum',
             subscribers: 2349823
-        }
-    ],
+        },
+        {
+            id: 4,
+            name: 'Lorem lorem Ipsum',
+            subscribers: 2349823
+        }],
     videos: [
         {
             id: 1,
             title: `Test video 1`,
             description,
             url: `https://samplelib.com/lib/preview/mp4/sample-5s.mp4`,
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Halleyparknovember.jpg/640px-Halleyparknovember.jpg',
             author: 'Lorem'
         },
         {
@@ -31,6 +36,7 @@ const datas = {
             title: `Test video 2`,
             description,
             url: `https://samplelib.com/lib/preview/mp4/sample-10s.mp4`,
+            img: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Charles_Bond_Park_1.JPG',
             author: 'Ipsum'
         },
         {
@@ -38,6 +44,7 @@ const datas = {
             title: `Test video 3`,
             description,
             url: `https://samplelib.com/lib/preview/mp4/sample-15s.mp4`,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqDGea9ry-c7faM2h30z_zXz8biYP38uHGjFsDiiUx78U4k4YdtEqtLHEgt3Ya-EOU8pE&usqp=CAU',
             author: 'Lorem'
         },
         {
@@ -45,6 +52,7 @@ const datas = {
             title: `Test video 4`,
             description,
             url: 'https://samplelib.com/lib/preview/mp4/sample-20s.mp4',
+            img: 'https://images.summitmedia-digital.com/realliving/resize/images/2018/10/08/1overall.webp',
             author: 'Lorem'
         },
         {

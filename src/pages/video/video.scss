@@ -2,10 +2,29 @@
 
 .videoPage__container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 20px auto;
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+
+  // flex-direction: column;
+
   margin-top: 60px;
+  .firstVideos {
+    width: 70%;
+    @media screen and(max-width:800px) {
+      width: 100%;
+    }
+  }
+  .secondVideos {
+    padding: 20px 0;
+    width: 30%;
+    .videos {
+      padding: 0;
+    }
+    @media screen and(max-width:800px) {
+      display: none;
+    }
+  }
 }

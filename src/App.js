@@ -6,11 +6,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/homepage/homepage';
 import VideoPage from './pages/video/video';
 import MobileSearch from './components/mobilesearch/mobilesearch';
+import LargeNav from './components/largenav/largenav';
 
 function App() {
   const [isActive, setActive] = useState(false);
   return (
     <BrowserRouter>
+      <LargeNav />
       <MobileSearch />
       <Header setActive={setActive} />
       <SideNav isActive={isActive} setActive={setActive} />
@@ -18,6 +20,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path='youtube-clone' element={<Homepage />} />
         <Route path='video/:video' element={<VideoPage />} />
+
+        <Route path='youtube-clone/video/:video' element={<VideoPage />} />
       </Routes>
     </BrowserRouter>
 

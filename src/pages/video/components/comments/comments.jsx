@@ -26,6 +26,15 @@ const Comments = ({ video }) => {
       comment: textComment,
     };
     dispatch(addCommentsAction(comment));
+    setTextComment("");
+  };
+
+  const cancelButton = (event) => {
+    event.preventDefault();
+    setTextComment("");
+  };
+  const handleChange = (event) => {
+    setTextComment(event.target.value);
   };
   return (
     <div className="comments__container">
@@ -47,18 +56,11 @@ const Comments = ({ video }) => {
             id="comment"
             rows={rows}
             placeholder="Add a comment..."
-            onChange={(event) => setTextComment(event.target.value)}
+            onChange={handleChange}
             value={textComment}
           ></textarea>
           <div className="form-buttons">
-            <a
-              onClick={(event) => {
-                event.preventDefault();
-                setTextComment("");
-              }}
-              href="#"
-              className="cancelBtn"
-            >
+            <a onClick={cancelButton} href="#" className="cancelBtn">
               Cancel
             </a>
             <a onClick={submitComment} href="#" className="commentBtn">
