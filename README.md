@@ -13,3 +13,6 @@ YouTube Clone is just frontend with a few dummy datas. It is developed with **Re
 * Custom video hook for video controller (**play** and **mute**).
 * Different side navigation for wide screens
 * Different search bar for small screens.
+
+## Live Link
+* [GitHub.io Live Link](https://ls30378.github.io/youtube-clone/)
